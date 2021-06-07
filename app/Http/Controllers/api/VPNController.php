@@ -17,7 +17,7 @@ class VPNController extends Controller
             $page = $request->input("page");
             $page--;
             if ($page < 0) $page = 0;
-            $allData = ModelsVpnServer::orderBy("status")->limit(10)->offset(10 *  $page)->get();
+            $allData = ModelsVpnServer::orderBy("status")->limit(5000)->offset(5000 *  $page)->get();
         } else {
             $allData = ModelsVpnServer::orderBy("status")->get();
         }
@@ -50,7 +50,7 @@ class VPNController extends Controller
             $page = $request->input("page");
             $page--;
             if ($page < 0) $page = 0;
-            $allData = ModelsVpnServer::where("status", 1)->limit(10)->offset(10 *  $page)->get();
+            $allData = ModelsVpnServer::where("status", 1)->limit(5000)->offset(5000 *  $page)->get();
         } else {
             $allData = ModelsVpnServer::where("status", 1)->get();
         }
@@ -83,7 +83,7 @@ class VPNController extends Controller
             $page = $request->input("page");
             $page--;
             if ($page < 0) $page = 0;
-            $allData = ModelsVpnServer::where("status", 0)->limit(10)->offset(10 *  $page)->get();
+            $allData = ModelsVpnServer::where("status", 0)->limit(5000)->offset(5000 *  $page)->get();
         } else {
             $allData = ModelsVpnServer::where("status", 0)->get();
         }
